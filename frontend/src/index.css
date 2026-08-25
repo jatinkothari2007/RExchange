@@ -1,0 +1,90 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    background-color: #0B0F19;
+    color: #F3F4F6;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Space Grotesk', sans-serif;
+    letter-spacing: -0.02em;
+  }
+}
+
+/* Custom minimal scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0B0F19;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1F2937;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #374151;
+}
+
+/* Glassmorphism utility */
+.glass-panel {
+  background: rgba(17, 24, 39, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(55, 65, 81, 0.5);
+}
+
+.glass-panel-elevated {
+  background: rgba(31, 41, 55, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(75, 85, 99, 0.6);
+}
+
+/* Floating Karma Micro-Interaction */
+@keyframes floatFadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(12px) scale(0.85);
+  }
+  20% {
+    opacity: 1;
+    transform: translateY(0px) scale(1.08);
+  }
+  80% {
+    opacity: 0.95;
+    transform: translateY(-28px) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-48px) scale(0.9);
+  }
+}
+
+.animate-float-karma {
+  animation: floatFadeUp 2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Pulse indicator for urgent needs */
+@keyframes subtleUrgencyPulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.4;
+    transform: scale(1.15);
+  }
+}
+
+.pulse-urgent {
+  animation: subtleUrgencyPulse 2.2s infinite ease-in-out;
+}
